@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class SimpleCalculator {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size:\n> ");
+        Array arr = new Array(sc.nextInt());
+        arr.input();
+        System.out.println("Multiple:\n< " + arr.multiple());
+    }
+}
+
+class Array {
+    private int size;
+    private int arr[];
+
+    private Scanner input = new Scanner(System.in);
+
+    public Array(int size) {
+        this.size = size;
+        arr = new int[size];
+    }
+
+    public void input() {
+        int i;
+        for (i = 0; i < size; ++i) {
+            arr[i] = input.nextInt();
+        }
+    }
+
+    public int multiple() {
+        int i;
+        Integer mul = 1;
+        for (i = 0; i < size; ++i){
+            mul *= arr[i];
+            }
+        return mul;
+}
+/*  public int multiple() {
+        int i;
+        Integer mul = 0;
+        for (i = 0; i < size; ++i) mul += arr[i];
+        return mul;
+}*/
+
+}
